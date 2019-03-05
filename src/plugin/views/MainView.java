@@ -32,6 +32,7 @@ public class MainView extends ViewPart {
     public void createPartControl(Composite parent) {
     	thisParent = parent;
     	fs.registerObserver(obs);
+    	fs.start();
     	display = PlatformUI.getWorkbench().getDisplay();
     	RowLayout rowLayout = new RowLayout();
     	rowLayout.type = SWT.VERTICAL;
