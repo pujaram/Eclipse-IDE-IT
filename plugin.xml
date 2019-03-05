@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="Eclipse-IDE-IT.views.category"
+            name="IDE-IT Plug-in"/>
+      <view
+            class="plugin.views.MainView"
+            category="Eclipse-IDE-IT.views.category"
+            id="plugin.views.mainView"
+            name="IDE-IT">
+      </view>
+   </extension>
+
+</plugin>
