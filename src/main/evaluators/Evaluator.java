@@ -57,6 +57,8 @@ public class Evaluator {
 		this.featureEvaluators.add(new BlockCommentEvaluator(this.document));
 		this.featureEvaluators.add(new RemoveImportEvaluator(textEditor));
 		this.featureEvaluators.add(new AddImportEvaluator(this.document));
+		this.featureEvaluators.add(new CorrectIndentationEvaluator(this.document));
+		this.featureEvaluators.add(new TrailingWhiteSpaceEvaluator(this.document));
 	}
 
 	/**
@@ -94,6 +96,14 @@ public class Evaluator {
 				this.manager.notifyFeatureSuggestion(featureEvaluator.getFeatureID());
 			}
 		}
+	}
+
+	public void evaluateDocumentBeforeChange(DocumentEvent event) {
+	    for (FeatureEvaluator featureEvaluator : this.featureEvaluators) {
+		if (featureEvaluator.evaluateDocumentBeforeChange(event)) {
+			this.manager.notifyFeatureSuggestion(featureEvaluator.getFeatureID());
+		}
+	    }
 	}
 
 	/**
