@@ -8,9 +8,9 @@
 
 ## 1 Introduction
 
-The Eclipse IDE provides helpful user interfaces and features for authoring, modifying, compiling, deploying, and debugging software. However, due to low accessibility and awareness of these tools and features, only a small number of these powerful IDE functionalities get used. Additionally, many developers find that many tools in their IDEs are not trivial to configure, and this prevents them from using the tool at all. The aim of the Integrated Development Environment - Intelligent Tutorials (IDE-IT) is to improve the discoverability of existing IDE tools and shortcuts, by providing developers non-invasive suggestions on Eclipse features that they may not be aware of. The suggestions take the form of hotkey tips and easy enabling/disabling of configuration settings. The hotkey suggestions are shown when the user is continually performing tasks manually that could be done with a hotkey and the enable/disable features appear periodically with configuration settings that other developers have found to be extremely useful but many are unaware of their locations within the menu or of their existence.
+The Eclipse IDE provides helpful user interfaces and features for authoring, modifying, compiling, deploying, and debugging software. However, due to low accessibility and awareness of these tools and features, only a small number of these powerful IDE functionalities get used. Additionally, many developers find that many tools in their IDEs are not trivial to configure, and this prevents them from using the tool at all. The aim of the **Integrated Development Environment - Intelligent Tutorials** (IDE-IT) is to improve the discoverability of existing IDE tools and shortcuts, by providing developers non-invasive suggestions on Eclipse features that they may not be aware of. The suggestions take the form of hotkey tips and easy enabling/disabling of configuration settings. The hotkey suggestions are shown when the user is continually performing tasks manually that could be done with a hotkey and the enable/disable features appear periodically with configuration settings that other developers have found to be extremely useful but many are unaware of their locations within the menu or of their existence.
 
-<sup>[back to top](#ide-it)</sup>
+<sup>[back to top](#eclipse-ide-it)</sup>
 
 ## 2 Installation
 
@@ -41,7 +41,7 @@ This section provides the instruction for installing IDE-IT Frontend.
 
 If the IDE-IT window does not appear right away, it can be made visible by going to the **Window** drop down menu. From here, select **Show View**, and then choose the **Other** option. From the list of folders that appears, under the **IDE-IT Plug-in** folder, select the **IDE-IT** option. Then, click **Open**.
 
-<sup>[back to top](#ide-it-frontend)</sup>
+<sup>[back to top](#eclipse-ide-it)</sup>
 
 ## 3 Using IDE-IT
 
@@ -63,7 +63,7 @@ Next to the lightbulb icons will be suggested hotkeys, these are keyboard shortc
 
 If you do not wish to see a hotkey tip or are not interested in an enable/disable feature, simply click the "X" on the right side of that tip or tool and it will not show up again.
 
-<sup>[back to top](#ide-it-frontend)</sup>
+<sup>[back to top](#eclipse-ide-it)</sup>
 
 ## 4 Reporting Bugs
 
@@ -74,6 +74,6 @@ If you find any bugs in our plugin, please submit an issue to our GitHub page: h
 - Specific steps to recreate the bug.
 - (Optional) A screen shot of the bug.
 
-<sup>[back to top](#ide-it-frontend)</sup>
+<sup>[back to top](#eclipse-ide-it)</sup>
 
 
