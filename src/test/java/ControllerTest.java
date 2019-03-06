@@ -37,13 +37,14 @@ public class ControllerTest {
 		
 		// Hotkeys that remain the same between operating systems
 		suggestionsMap.put("addImportStatementsSuggestion", new Suggestion("addImportStatementsSuggestion", "Try using 'CTRL + SHIFT + O' to add import statements.", HOTKEY, true));
-		suggestionsMap.put("removeUnusedImportsStatementSuggestion", new Suggestion("removeUnusedImportsStatementSuggestion", "Try using 'CTRL + SHIFT + O' to remove unused imports.", HOTKEY, true));
+		suggestionsMap.put("removeUnusedImportStatementsSuggestion", new Suggestion("removeUnusedImportsStatementSuggestion", "Try using 'CTRL + SHIFT + O' to remove unused imports.", HOTKEY, true));
 		suggestionsMap.put("correctIndentationsSuggestion", new Suggestion("correctIndentationsSuggestion", "Try using 'CTRL + I' to correct indentation.", HOTKEY, true));
 		
 		// Configurations
 		suggestionsMap.put("enableAutocompleteSuggestion", new Suggestion("enableAutocompleteSuggestion", "Enable content assist auto activation", CONFIG, true));
 		suggestionsMap.put("enableSmartSemicolonSuggestion", new Suggestion("enableSmartSemicolonSuggestion", "Enable smart semicolon activation", CONFIG, true));
 		suggestionsMap.put("enableShadowedVariableWarning", new Suggestion("enableShadowedVariableWarning", "Enable shadowed variable warning", CONFIG, true));
+		suggestionsMap.put("trailingWhiteSpaceSuggestion", new Suggestion("trailingWhiteSpaceSuggestion", "Automatically remove trailing white spaces on save", CONFIG, true));
 		
 		assertTrue(suggestionsMap.equals(controller.getSuggestionsMap()));
 	}
