@@ -26,9 +26,9 @@ This section provides the instruction for installing IDE-IT Frontend.
 
 1. Clone this repository to your local machine
 
-    `git clone https://github.com/DavidThien/IDE-IT.git`
+    `git clone https://github.com/pujaram/Eclipse-IDE-IT.git`
     
-2. Build the plugin locally using ant:
+2. Build the plugin locally using maven:
 
     `mvn clean install`
     
