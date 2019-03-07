@@ -17,9 +17,10 @@ public class FSObserver extends FeatureSuggestionObserver {
 	
 	@Override
 	public void notify(String featureID) {
-		// Add method here for searching map for featureID		
+		// Searches map for featureID		
 		System.out.println("Feature suggestion for " + featureID);
 		Suggestion feature = suggestionsMap.get(featureID);
+		System.out.println(feature.getID());
 		view.addFeature(feature);
 	}
 }
