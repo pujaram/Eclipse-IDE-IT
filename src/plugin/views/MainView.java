@@ -5,11 +5,12 @@ import java.util.Map;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.layout.RowLayout;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.custom.ScrolledComposite;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.part.ViewPart;
+
 
 import main.interfaces.FeatureSuggestion;
 import main.interfaces.FeatureSuggestionInterface;
@@ -21,28 +22,46 @@ public class MainView extends ViewPart {
 	private static final int CONFIG = 0;
 	private static final int HOTKEY = 1;
 	private Composite thisParent;
+	private Composite child;
+	private ScrolledComposite sc;
 	private Display display;
 	FeatureSuggestionInterface fs = new FeatureSuggestion();
 	FSObserver obs = new FSObserver(this);
 	
+	// Instantiates the MainView class to display window view
     public MainView() {
         super();
-    }
+      }
     
+    // Creates the view's control with parent composite object
     @Override
     public void createPartControl(Composite parent) {
     	thisParent = parent;
     	fs.registerObserver(obs);
     	fs.start();
     	display = PlatformUI.getWorkbench().getDisplay();
-    	RowLayout rowLayout = new RowLayout();
-    	rowLayout.type = SWT.VERTICAL;
-    	rowLayout.pack = true;
-    	rowLayout.marginHeight = 0;
-    	thisParent.setLayout(rowLayout);
+
+    	org.eclipse.swt.graphics.Color white = display.getSystemColor(SWT.COLOR_WHITE);
+    	
+    	sc = new ScrolledComposite(thisParent, SWT.H_SCROLL | SWT.V_SCROLL);
+    	sc.setBackgroundMode(SWT.INHERIT_DEFAULT);
+    	sc.setBackground(white);
+    	
+    	child = new Composite(sc, SWT.NONE);
+    	
+    	RowLayout layout = new RowLayout(SWT.VERTICAL);
+    	layout.fill = true;
+    	layout.wrap = false;
+    	child.setLayout(layout);
+
     	hardCodeConfigs();
+    	
+    	child.setSize(400, 400);
+    	
+    	sc.setContent(child);
     }
     
+    // Adds configuration suggestions to the window
     // For version 1, we will hard code configuration suggestions to appear
     public void hardCodeConfigs() {
     	Controller control = new Controller();
@@ -70,6 +89,9 @@ public class MainView extends ViewPart {
     	addFeature(shadowVariable);
     }
     
+    // Adds feature suggestion to window
+    // Displays Suggestion s with configuration checkbox or hotkey tip
+    // depending on type of s
     public void addFeature(Suggestion s) {
     	if (s.getType() == HOTKEY && s.getDisplay() && s.getCount() < 3) {
     		s.increaseCount();
@@ -81,25 +103,30 @@ public class MainView extends ViewPart {
     	}
     	Display.getDefault().asyncExec(new Runnable() {
     		public void run() {
-    			thisParent.requestLayout();
+    			child.requestLayout();
     			}
     		});
     }
 
+    // Accepts focus of parent composite object
     @Override
     public void setFocus() {
-        thisParent.setFocus();
+        child.setFocus();
     }
     
+    // Creates new hotkey display composite object with Suggestion s,
+    // with a lightbulb icon, suggestion, and 'x' button
     public void createHotkeyTip(Suggestion s) {
     	Display.getDefault().asyncExec(new Runnable() {
     		public void run() {
-    			HotkeyDisplayComposite hdc = new HotkeyDisplayComposite(thisParent, s, display);
+    			new HotkeyDisplayComposite(child, s, display);
     		}
     	});
     }
     
+    // Creates new configuration display composite object with Suggestion s
+    // with a checkbox, suggestion, and 'x' button
     public void createConfigTip(Suggestion s) {
-    	ConfigDisplayComposite cdc = new ConfigDisplayComposite(thisParent, s);
+    	new ConfigDisplayComposite(child, s, display);
     }
 }

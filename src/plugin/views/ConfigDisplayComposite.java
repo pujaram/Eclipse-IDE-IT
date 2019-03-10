@@ -3,26 +3,34 @@ package plugin.views;
 import org.eclipse.core.runtime.preferences.IEclipsePreferences;
 import org.eclipse.core.runtime.preferences.InstanceScope;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.events.SelectionAdapter;
-import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.layout.RowLayout;
-import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.events.*;
+import org.eclipse.swt.graphics.Image;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
 
 import main.java.Suggestion;
 
+/*
+ * Class defining a new composite object, containing a checkbox, text, and an exit button.
+ */
 public class ConfigDisplayComposite {
-
-	public ConfigDisplayComposite(final Composite parent, Suggestion s) {
+	
+	/**
+	 * Creates a new ConfigDisplayComposite object.
+	 * 
+	 * @param parent. The composite object that this composite will be a child of.
+	 * @param s. The suggestion object for whose composite object we will be making. The
+	 * 				text from this object will be the text displayed in the composite object.
+	 * @param display. The display that will be appended.
+	 */
+	public ConfigDisplayComposite(final Composite parent, Suggestion s, Display display) {
 		final Composite baseComposite = new Composite(parent, SWT.NONE);
 
 		// Set layout
-		RowLayout rowLayout = new RowLayout();
-    	rowLayout.type = SWT.HORIZONTAL;
-    	rowLayout.pack = true;
-    	baseComposite.setLayout(rowLayout);
+		GridLayout GridLayout = new GridLayout();
+		GridLayout.numColumns = 2;
+		GridLayout.makeColumnsEqualWidth = true;
+    	baseComposite.setLayout(GridLayout);
 
     	// Add checkbox
     	Button checkBox = new Button(baseComposite, SWT.CHECK);
@@ -40,16 +48,35 @@ public class ConfigDisplayComposite {
     	}
 
     	// Add exit button
-    	Button exitButton = new Button(baseComposite, SWT.NONE);
-    	exitButton.setText("X");
-    	exitButton.addListener(SWT.Selection, new Listener() {
-  	      public void handleEvent(Event e) {
-  	    	  baseComposite.dispose();
-  	    	  parent.requestLayout();
-  	      }
+    	Image exitButton = new Image(display, getClass().getResourceAsStream("../../../icons/ExitButton.png"));
+    	Label test = new Label(baseComposite, SWT.NONE);
+    	test.setImage(exitButton);
+    	test.addMouseListener(new MouseListener() {
+			@Override
+			public void mouseDoubleClick(MouseEvent e) {
+				baseComposite.dispose();
+				parent.requestLayout();
+				s.setDisplay(true);
+			}
+			
+			@Override
+			public void mouseDown(MouseEvent e) {}
+
+			@Override
+			public void mouseUp(MouseEvent e) {
+				baseComposite.dispose();
+				parent.requestLayout();
+				s.setDisplay(true);
+			}	
     	});
 	}
 
+	/**
+	 * Adds a listener to the checkbox, which enables content assist auto activation when checked,
+	 * and disables it when unchecked.
+	 * 
+	 * @param checkBox. The checkbox to add a listener to.
+	 */
 	public void autoActivationCheckbox(Button checkBox) {
 		checkBox.addSelectionListener(new SelectionAdapter() {
     		@Override
@@ -79,6 +106,12 @@ public class ConfigDisplayComposite {
     	});
 	}
 
+	/**
+	 * Adds a listener to the checkbox, which enables content assist smart semicolon when checked,
+	 * and disables it when unchecked.
+	 * 
+	 * @param checkBox. The checkbox to add a listener to.
+	 */
 	public void smartSemicolonCheckbox(Button checkBox) {
 		checkBox.addSelectionListener(new SelectionAdapter() {
     		@Override
@@ -108,6 +141,12 @@ public class ConfigDisplayComposite {
     	});
 	}
 
+	/**
+	 * Adds a listener to the checkbox, which enables a compiler warning for shadowed variables when
+	 * checked, and ignores it when unchecked.
+	 * 
+	 * @param checkBox. The checkbox to add a listener to.
+	 */
 	public void shadowVariableWarning(Button checkBox) {
 		checkBox.addSelectionListener(new SelectionAdapter() {
     		@Override
@@ -139,6 +178,12 @@ public class ConfigDisplayComposite {
     	});
 	}
 
+	/**
+	 * Adds a listener to the checkbox, which enables trailing white spaces to be removed upon
+	 * save when checked, and disables it when unchecked.
+	 * 
+	 * @param checkBox. The checkbox to add a listener to.
+	 */
 	public void trailingWhitespace(Button checkBox) {
 		checkBox.addSelectionListener(new SelectionAdapter() {
     		@Override

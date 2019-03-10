@@ -1,39 +1,64 @@
 package plugin.views;
 
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.custom.CLabel;
-import org.eclipse.swt.graphics.Image;
-import org.eclipse.swt.layout.RowLayout;
-import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Composite;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Event;
-import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.custom.*;
+import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.events.MouseListener;
+import org.eclipse.swt.graphics.*;
+import org.eclipse.swt.layout.*;
+import org.eclipse.swt.widgets.*;
 
 import main.java.Suggestion;
 
+/**
+ * Class defining a new composite object, containing a lightbulb icon, text, and an exit button.
+ */
 public class HotkeyDisplayComposite {
+	
+	/**
+	 * Creates a new HotkeyDisplayComposite object.
+	 * 
+	 * @param parent. The composite object that this composite will be a child of.
+	 * @param s. The suggestion object for whose composite object we will be making. The
+	 * 				text from this object will be the text displayed in the composite object.
+	 * @param display. The display that will be appended.
+	 */
 	public HotkeyDisplayComposite(final Composite parent, Suggestion s, Display display) {
 		final Composite baseComposite = new Composite(parent, SWT.NONE);
 		
-		RowLayout rowLayout = new RowLayout();
-    	rowLayout.type = SWT.HORIZONTAL;
-    	rowLayout.pack = true;
-    	baseComposite.setLayout(rowLayout);
+		// Set layout
+		GridLayout GridLayout = new GridLayout();
+		GridLayout.numColumns = 2;
+		GridLayout.makeColumnsEqualWidth = true;
+    	baseComposite.setLayout(GridLayout);
     	
-    	Image image = new Image(display, getClass().getResourceAsStream("../../../icons/lightbulb_2.png"));
+    	// Add lightbulb icon
+    	Image image = new Image(display, getClass().getResourceAsStream("../../../icons/LightBulb.jpeg"));
         CLabel hotkey = new CLabel(baseComposite, 0);
         hotkey.setImage(image);
         hotkey.setText(s.getText());
-    	
-    	Button exitButton = new Button(baseComposite, SWT.NONE);
-    	exitButton.setText("X");
-    	exitButton.addListener(SWT.Selection, new Listener() {
-    	      public void handleEvent(Event e) {
-    	    	  baseComposite.dispose();
-                  parent.requestLayout();
-                  s.setDisplay(true);
-    	      }
+
+        // Add exit button
+        Image exitButton = new Image(display, getClass().getResourceAsStream("../../../icons/ExitButton.png"));
+    	Label test = new Label(baseComposite, SWT.NONE);
+    	test.setImage(exitButton);
+    	test.addMouseListener(new MouseListener() {
+			@Override
+			public void mouseDoubleClick(MouseEvent e) {
+				baseComposite.dispose();
+				parent.requestLayout();
+				s.setDisplay(true);
+			}
+			
+			@Override
+			public void mouseDown(MouseEvent e) {}
+
+			@Override
+			public void mouseUp(MouseEvent e) {
+				baseComposite.dispose();
+				parent.requestLayout();
+				s.setDisplay(true);
+			}	
     	});
 	}
 }
