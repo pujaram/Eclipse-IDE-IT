@@ -18,15 +18,13 @@ import java.util.List;
   	public static final String CORRECT_INDENTATION_FEATURE_ID = "correctIndentationsSuggestion";
   	public static final String REMOVE_IMPORT_FEATURE_ID = "removeUnusedImportStatementSuggestion";
   	public static final String TRAILING_WHITE_SPACE_FEATURE_ID = "trailingWhiteSpaceSuggestion";
-  	public static final String GETTER_SETTER_FEATURE_ID = "getterSetterSuggestion";
 
 
   	private static final List<String> featureIDs = Arrays.asList(BLOCK_COMMENT_FEATURE_ID,
   									ADD_IMPORT_FEATURE_ID,
   									CORRECT_INDENTATION_FEATURE_ID,
   									REMOVE_IMPORT_FEATURE_ID,
-  									TRAILING_WHITE_SPACE_FEATURE_ID,
-  									GETTER_SETTER_FEATURE_ID);
+  									TRAILING_WHITE_SPACE_FEATURE_ID);
 
   	public static List<String> getAllFeatureIDs() {
   	    return new ArrayList<String>(featureIDs);
