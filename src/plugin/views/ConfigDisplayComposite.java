@@ -48,7 +48,7 @@ public class ConfigDisplayComposite {
     	}
 
     	// Add exit button
-    	Image exitButton = new Image(display, getClass().getResourceAsStream("/resources/ExitButton.png"));
+    	Image exitButton = new Image(display, getClass().getResourceAsStream("../../../icons/ExitButton.png"));
     	Label test = new Label(baseComposite, SWT.NONE);
     	test.setImage(exitButton);
     	test.addMouseListener(new MouseListener() {
