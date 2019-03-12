@@ -9,5 +9,6 @@ rm -R -f IDE-IT/
 git clone https://github.com/AlyssaRicketts/IDE-IT-Frontend.git
 cp IDE-IT-Frontend/IDE-IT-Frontend/src/main/java/*.java src/main/java/
 cp IDE-IT-Frontend/IDE-IT-Frontend/src/plugin/views/*.java src/plugin/views/
-cp IDE-IT-Frontend/IDE-IT-Frontend/src/test/java/*.java src/test/java
+cp IDE-IT-Frontend/IDE-IT-Frontend/src/test/java/*.java src/test/java/
+cp IDE-IT-Frontend/IDE-IT-Frontend/icons/* icons/
 rm -R -f IDE-IT-Frontend/
