@@ -55,17 +55,17 @@ This section provides the instruction for installing IDE-IT as a plugin in the E
 6. Select the master branch and press Next
 7. Choose a destination directory on your local machine for the project and press Next
 8. Use the **Import existing Eclipse projects** wizard and continue
-9. Select the Eclipse-IDE-IT project folder and press Finish.
+9. Select the Eclipse-IDE-IT project folder and press Finish
 
 #### 2.3.2 Export Plug-in into Workspace
 1. Right click on the Eclipse-IDE-IT project and select **Export**
 2. Choose the **Deployable plug-ins and fragments** option under Plug-in Development and continue
 3. Select the **Eclipse-IDE-IT** checkbox and use the **Install into host** button
-4. Press Finish and wait for the project to be exported.
+4. Press Finish and wait for the project to be exported
     * If you incur a security warning, continue with the installation by pressing **Install anyway**
     * When prompted to restart the IDE to apply the changes, select **Restart now**
 5. From the menu choose: **Window | Show View**
-6. Select the **Other** option and select the **IDE-IT** option under the IDE-IT Plug-in folder.
+6. Select the **Other** option and select the **IDE-IT** option under the IDE-IT Plug-in folder
 7. Click **Open** and the plug-in should be displayed in a new window
 
 
