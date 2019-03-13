@@ -33,13 +33,13 @@ public class HotkeyDisplayComposite {
     	baseComposite.setLayout(GridLayout);
     	
     	// Add lightbulb icon
-    	Image image = new Image(display, getClass().getResourceAsStream("../../../icons/LightBulb.jpeg"));
+    	Image image = new Image(display, getClass().getResourceAsStream("/resources/LightBulb.jpeg"));
         CLabel hotkey = new CLabel(baseComposite, 0);
         hotkey.setImage(image);
         hotkey.setText(s.getText());
 
         // Add exit button
-        Image exitButton = new Image(display, getClass().getResourceAsStream("../../../icons/ExitButton.png"));
+        Image exitButton = new Image(display, getClass().getResourceAsStream("/resources/ExitButton.png"));
     	Label test = new Label(baseComposite, SWT.NONE);
     	test.setImage(exitButton);
     	test.addMouseListener(new MouseListener() {
