@@ -22,7 +22,9 @@ This section provides the instruction for installing IDE-IT as a plugin in the E
 2. Apache Maven version 3.6.0 or higher. See [Apache Maven Downloads](https://maven.apache.org/download.cgi) for more.
 3. Eclipse IDE version 2018-12 or higher. See [Eclipse IDE Downloads](https://www.eclipse.org/eclipseide/) for more.
 
-### 2.2 Build Project
+### 2.2 Build Project (Optional)
+
+To get the most updated versions of the [backend](https://github.com/DavidThien/IDE-IT) and [frontend](https://github.com/AlyssaRicketts/IDE-IT-Frontend) projects that contribute to this repository, follow the instructions below.
 
 1. Clone this repository to your local machine
 
