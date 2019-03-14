@@ -20,7 +20,7 @@ This section provides the instruction for installing IDE-IT as a plugin in the E
 
 1. Java JDK version 1.8.0 or higher. See [Oracle Java Downloads](https://www.oracle.com/technetwork/java/javase/downloads/index.html) for more.
 2. Apache Maven version 3.6.0 or higher. See [Apache Maven Downloads](https://maven.apache.org/download.cgi) for more.
-3. Eclipse IDE version 2018-12 or higher. See [Eclipse IDE Downloads](https://www.eclipse.org/eclipseide/) for more.
+3. Eclipse IDE for RCP and RAP Developers 2018-12 or higher. See [Eclipse IDE Downloads](https://www.eclipse.org/eclipseide/) for more.
 
 ### 2.2 Build Project (Optional)
 
