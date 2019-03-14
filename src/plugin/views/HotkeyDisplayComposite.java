@@ -33,7 +33,7 @@ public class HotkeyDisplayComposite {
     	baseComposite.setLayout(GridLayout);
     	
     	// Add lightbulb icon
-    	Image image = new Image(display, getClass().getResourceAsStream("/resources/LightBulb.jpeg"));
+    	Image image = new Image(display, getClass().getResourceAsStream("/resources/Lightbulb.jpeg"));
         CLabel hotkey = new CLabel(baseComposite, 0);
         hotkey.setImage(image);
         hotkey.setText(s.getText());
