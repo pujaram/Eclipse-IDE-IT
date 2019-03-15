@@ -6,13 +6,13 @@
 [1 - Introduction](#1-introduction) | [2 - Installation](#2-installation) | [3 - Using IDE-IT](#3-using-ide-it) | [4 - Reporting Bugs](#4-reporting-bugs)
 
 
-## 1 Introduction
+## 1. Introduction
 
 The Eclipse IDE provides helpful user interfaces and features for authoring, modifying, compiling, deploying, and debugging software. However, due to low accessibility and awareness of these tools and features, only a small number of these powerful IDE functionalities get used. Additionally, many developers find that many tools in their IDEs are not trivial to configure, and this prevents them from using the tool at all. The aim of the **Integrated Development Environment - Intelligent Tutorials** (IDE-IT) is to improve the discoverability of existing IDE tools and shortcuts, by providing developers non-invasive suggestions on Eclipse features that they may not be aware of. The suggestions take the form of hotkey tips and easy enabling/disabling of configuration settings. The hotkey suggestions are shown when the user is continually performing tasks manually that could be done with a hotkey and the enable/disable features appear periodically with configuration settings that other developers have found to be extremely useful but many are unaware of their locations within the menu or of their existence.
 
 <sup>[back to top](#eclipse-ide-it)</sup>
 
-## 2 Installation
+## 2. Installation
 
 This section provides the instruction for installing IDE-IT as a plugin in the Eclipse IDE.
 
@@ -73,7 +73,7 @@ To get the most updated versions of the [backend](https://github.com/DavidThien/
 
 <sup>[back to top](#eclipse-ide-it)</sup>
 
-## 3 Using IDE-IT
+## 3. Using IDE-IT
 
 To use this plugin first make sure the IDE-IT window is visible in your IDE, if it is not visible finish the steps in Installation above. Once the window is visible, just begin working on your project. The window will update based on patterns in your keystrokes with hotkey tips and features you might want to enable or disable.
 
@@ -95,7 +95,7 @@ If you do not wish to see a hotkey tip or are not interested in an enable/disabl
 
 <sup>[back to top](#eclipse-ide-it)</sup>
 
-## 4 Reporting Bugs
+## 4. Reporting Bugs
 
 If you find any bugs in our plugin, please submit an issue to our GitHub page: https://github.com/pujaram/Eclipse-IDE-IT/issues with the following information:
 
